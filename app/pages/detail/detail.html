@@ -1,0 +1,15 @@
+<ion-navbar *navbar>
+  <ion-title>Todos</ion-title>
+</ion-navbar>
+
+<ion-content>
+  <ion-list>
+    <ion-input>
+      <ion-label>
+        Name
+      </ion-label>
+      <input type="text" [(ngModel)]="name">
+    </ion-input>
+    <button block (click)="pushTodo(todo)">Add todo</button>
+  </ion-list>
+</ion-content>

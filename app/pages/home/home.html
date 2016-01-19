@@ -1,0 +1,23 @@
+<ion-navbar *navbar>
+  <ion-title>
+    Home
+  </ion-title>
+  <ion-buttons right>
+    <button (click)="newTodo()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>
+
+<ion-content class="home">
+  <ion-list>
+    <ion-item-sliding *ngFor="#todo of todos" #slidingItem>
+      <ion-item (click)="pushDetail(todo)" [ngClass]="{done: todo.completed}">
+        {{todo.name}}
+      </ion-item>
+      <ion-item-options>
+        <button (click)="complete(slidingItem,todo)">Toggle</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
